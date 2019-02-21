@@ -24,6 +24,11 @@
                <p class="alert alert-danger">{{session('msg')}}</p>
 
                 @endif
+                @if(count($errors)>0)
+                @foreach($errors->all() as $error )
+               <p class="alert alert-danger">{{$error}}</p>
+                @endforeach
+                 @endif
 
 
         <li data-tabtar="lgm-2"><a href="#">Login</a></li>
@@ -53,6 +58,29 @@
                 <input class="string optional" maxlength="255" name="email" placeholder="Email" type="email" size="50" required />
               </div>
             </div>
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Mobile No</label>
+                <input class="string optional" maxlength="255" name="mobile" placeholder="Mobile No" type="text" size="50" required />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input full">
+                <label class="string optional" for="user-name">Birth Date</label>
+                <input class="string optional" maxlength="255" name="birthdate" placeholder="Birth Date" type="date" size="50" required />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input string optional">
+                <label class="string optional" for="user-pw">Password *</label>
+                <input class="string optional" maxlength="255" name="password" placeholder="Password" type="password" size="50"  required/>
+              </div>
+              <div class="input string optional">
+                <label class="string optional" for="user-pw-repeat">Repeat password *</label>
+                <input class="string optional" maxlength="255" name="password_confirmation" placeholder="Repeat password" type="password" size="50"  required />
+              </div>
+            </div>
+
 
 
             <div class="simform__actions">
